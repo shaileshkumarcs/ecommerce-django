@@ -20,17 +20,18 @@
             <div class="col">
                <p>{{ content }}</p>
                 <div class="col-sm-6 col-12">
-                    <form>{% csrf_token %}
+                    <form method="POST"> {% csrf_token %}
                         {{ form }}
-                    </form>
-
-
-                    <form method="POST">{% csrf_token %}
-                        <input type="text" class="form-control" placeholder="Name" name="fullname">
-                        <input type="email" class="form-control" placeholder="Email", name="email">
-                        <textarea name="content" class="form-control" placeholder="Your content"></textarea>
                         <button type="submit" class="btn btn-primary">SUBMIT</button>
                     </form>
+
+
+                    <!--<form method="POST">{% csrf_token %}-->
+                        <!--<input type="text" class="form-control" placeholder="Name" name="fullname">-->
+                        <!--<input type="email" class="form-control" placeholder="Email", name="email">-->
+                        <!--<textarea name="content" class="form-control" placeholder="Your content"></textarea>-->
+                        <!--<button type="submit" class="btn btn-primary">SUBMIT</button>-->
+                    <!--</form>-->
                 </div>
             </div>
         </div>
