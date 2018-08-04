@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import TemplateView
 #
 # from products.views import (
 #                 # ProductListView,
@@ -38,6 +39,8 @@ urlpatterns = [
     url(r'^login/$', login_page, name="login"),
     url(r'^register/$', register_page, name="register"),
     url(r'^products/', include("products.urls", namespace="products")),
+    url(r'^bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
+    url(r'^search/', include("search.urls", namespace="search")),
 
     # url(r'^featured/$', ProductFeaturedListView.as_view()),
     # url(r'^featured/(?P<pk>\d+)/$', ProductFeaturedDetailView.as_view()),
